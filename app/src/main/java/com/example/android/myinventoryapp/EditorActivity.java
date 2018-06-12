@@ -64,9 +64,9 @@ public class EditorActivity extends AppCompatActivity {
         ContentValues values = new ContentValues();
         values.put(ProductEntry.COLUMN_PRODUCT_NAME, nameString);
         values.put(ProductEntry.COLUMN_PRODUCT_PRICE, price);
-        values.put(ProductEntry.COLUMN_PRODUCT_PRICE, quantity);
+        values.put(ProductEntry.COLUMN_PRODUCT_QUANTITY, quantity);
         values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER, supplierString);
-        values.put(ProductEntry.COLUMN_PRODUCT_QUANTITY, phone);
+        values.put(ProductEntry.COLUMN_PRODUCT_PHONE, phone);
 
         // Insert a new row for pet in the database, returning the ID of that new row.
         long newRowId = db.insert(ProductEntry.TABLE_NAME, null, values);
@@ -91,10 +91,6 @@ public class EditorActivity extends AppCompatActivity {
                 insertProduct();
                 // Exit activity
                 finish();
-                return true;
-            // Respond to a click on the "Delete" menu option
-            case R.id.action_delete:
-                // TODO: Delete one product entry
                 return true;
             // Respond to a click on the "Up" arrow button in the app bar
             case android.R.id.home:

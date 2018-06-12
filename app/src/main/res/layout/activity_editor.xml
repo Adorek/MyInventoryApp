@@ -53,13 +53,15 @@
             android:id="@+id/edit_product_price"
             style="@style/EditorFieldStyle"
             android:hint="@string/hint_product_price"
-            android:inputType="number" />
+            android:inputType="number"
+            android:maxLength="6"/>
 
         <EditText
             android:id="@+id/edit_product_quantity"
             style="@style/EditorFieldStyle"
             android:hint="@string/hint_product_quantity"
-            android:inputType="number" />
+            android:inputType="number"
+            android:maxLength="6" />
 
         <EditText
             android:id="@+id/edit_product_supplier"
@@ -71,7 +73,8 @@
             android:id="@+id/edit_product_phone"
             style="@style/EditorFieldStyle"
             android:hint="@string/hint_product_phone"
-            android:inputType="number" />
+            android:inputType="phone"
+            android:maxLength="9"/>
 
     </LinearLayout>
 </LinearLayout>
