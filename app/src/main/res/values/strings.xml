@@ -88,5 +88,8 @@
     <string name="call">Call</string>
     <string name="title_error">You must enter the title</string>
     <string name="supplier_name_error">You must enter the supplier name</string>
+    <string name="price_error">You must enter the price</string>
+    <string name="quantity_error">You must enter the product quantity</string>
+    <string name="phone_error">You must enter the phone number</string>
 
 </resources>

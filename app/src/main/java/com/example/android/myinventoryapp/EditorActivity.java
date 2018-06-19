@@ -113,6 +113,7 @@ public class EditorActivity extends AppCompatActivity implements
         mPhoneEditText.setOnTouchListener(mTouchListener);
 
 
+        //Make call to the supplier
         mCallToSupplier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,7 +125,7 @@ public class EditorActivity extends AppCompatActivity implements
                 }
             }
         });
-
+        //Decrease quantity by 1
         mDecreaseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -138,7 +139,7 @@ public class EditorActivity extends AppCompatActivity implements
                 mQuantityEditText.setText("" + quantity);
             }
         });
-
+        //Increase quantity by 1
         mIncreaseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -192,17 +193,19 @@ public class EditorActivity extends AppCompatActivity implements
         }
         values.put(ProductEntry.COLUMN_PRODUCT_NAME, nameString);
 
-        int price = 0;
-        if (!TextUtils.isEmpty(priceString)) {
-            price = Integer.parseInt(priceString);
+        if (TextUtils.isEmpty(priceString)) {
+            mPriceEditText.setError(getString(R.string.price_error));
+            checkSum = 1;
+            return;
         }
-        values.put(ProductEntry.COLUMN_PRODUCT_PRICE, price);
+        values.put(ProductEntry.COLUMN_PRODUCT_PRICE, priceString);
 
-        int quantity = 0;
-        if (!TextUtils.isEmpty(quantityString)) {
-            quantity = Integer.parseInt(quantityString);
+        if (TextUtils.isEmpty(quantityString)) {
+            mQuantityEditText.setError(getString(R.string.quantity_error));
+            checkSum = 1;
+            return;
         }
-        values.put(ProductEntry.COLUMN_PRODUCT_QUANTITY, quantity);
+        values.put(ProductEntry.COLUMN_PRODUCT_QUANTITY, quantityString);
 
         if (supplierString.isEmpty()) {
             mSupplierEditText.setError(getString(R.string.supplier_name_error));
@@ -211,11 +214,12 @@ public class EditorActivity extends AppCompatActivity implements
         }
         values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER, supplierString);
 
-        int phone = 0;
-        if (!TextUtils.isEmpty(phoneString)) {
-            phone = Integer.parseInt(phoneString);
+        if (TextUtils.isEmpty(phoneString)) {
+            mPhoneEditText.setError(getString(R.string.phone_error));
+            checkSum = 1;
+            return;
         }
-        values.put(ProductEntry.COLUMN_PRODUCT_PHONE, phone);
+        values.put(ProductEntry.COLUMN_PRODUCT_PHONE, phoneString);
 
 
         // Determine if this is a new or existing product by checking if mCurrentProductUri is null or not
@@ -253,8 +257,6 @@ public class EditorActivity extends AppCompatActivity implements
             }
         }
     }
-
-
     /**
      * This method is called after invalidateOptionsMenu(), so that the
      * menu can be updated (some menu items can be hidden or made visible).
@@ -276,13 +278,11 @@ public class EditorActivity extends AppCompatActivity implements
         switch (item.getItemId()) {
             // Respond to a click on the "Save" menu option
             case R.id.action_save:
-                // Add product
+                // Save or Add product
                 saveProduct();
                 if (checkSum == 0) {
-                    // Exit activity
+                    // Close the activity
                     finish();
-                } else {
-
                 }
                 return true;
             case R.id.action_delete:
@@ -327,7 +327,6 @@ public class EditorActivity extends AppCompatActivity implements
             super.onBackPressed();
             return;
         }
-
         // Otherwise if there are unsaved changes, setup a dialog to warn the user.
         // Create a click listener to handle the user confirming that changes should be discarded.
         DialogInterface.OnClickListener discardButtonClickListener =
@@ -338,7 +337,6 @@ public class EditorActivity extends AppCompatActivity implements
                         finish();
                     }
                 };
-
         // Show dialog that there are unsaved changes
         showUnsavedChangesDialog(discardButtonClickListener);
     }
