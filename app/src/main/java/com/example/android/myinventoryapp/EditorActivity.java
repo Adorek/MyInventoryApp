@@ -116,7 +116,7 @@ public class EditorActivity extends AppCompatActivity implements
         mCallToSupplier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phone = mSupplierEditText.getText().toString().trim();
+                String phone = mPhoneEditText.getText().toString().trim();
                 Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:" + phone));
                 if (intent.resolveActivity(getPackageManager()) != null) {
