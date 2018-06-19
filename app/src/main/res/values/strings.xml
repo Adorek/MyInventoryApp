@@ -7,11 +7,23 @@
     <!-- Label for overflow menu option that deletes all products data in the app [CHAR LIMIT=20] -->
     <string name="action_delete_all_entries">Delete All Products</string>
 
+    <!-- Title text for the empty view [CHAR LIMIT=50] -->
+    <string name="empty_view_title_text">No product\'s data...</string>
+
+    <!-- Subtitle text for the empty view that prompts the user to add a product [CHAR LIMIT=50] -->
+    <string name="empty_view_subtitle_text">Hit the \"plus\" button to add a product</string>
+
     <!-- Label for editor menu option to save product and leave editor [CHAR LIMIT=20] -->
     <string name="action_save">Save</string>
 
     <!-- Label for editor overflow menu option that deletes the current product [CHAR LIMIT=20] -->
     <string name="action_delete">Delete</string>
+
+    <!-- Toast message in editor when new product has been successfully inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_product_successful">Product saved</string>
+
+    <!-- Toast message in editor when new product has failed to be inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_product_failed">Error with saving product</string>
 
     <!-- Product Name [CHAR LIMIT=30] -->
     <string name="category_name">Product Name</string>
@@ -28,11 +40,53 @@
     <!-- Supplier phone number [CHAR LIMIT=30] -->
     <string name="category_phone">Supplier Phone Number</string>
 
+    <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+
+    <!-- Dialog button text for the option to discard a user's changes [CHAR LIMIT=20] -->
+    <string name="discard">Discard</string>
+
+    <!-- Dialog button text for the option to keep editing the current product [CHAR LIMIT=20] -->
+    <string name="keep_editing">Keep Editing</string>
+
+    <!-- Toast message in editor when current product was successfully updated [CHAR LIMIT=NONE] -->
+    <string name="editor_update_product_successful">Product updated</string>
+
+    <!-- Toast message in editor when current product has failed to be updated [CHAR LIMIT=NONE] -->
+    <string name="editor_update_product_failed">Error with updating product</string>
+
+    <!-- Toast message in editor when current product was successfully deleted [CHAR LIMIT=NONE] -->
+    <string name="editor_delete_product_successful">Product deleted</string>
+
+    <!-- Toast message in editor when current product has failed to be deleted [CHAR LIMIT=NONE] -->
+    <string name="editor_delete_product_failed">Error with deleting product</string>
+
+    <!-- Dialog message to ask the user to confirm deleting the current product [CHAR LIMIT=NONE] -->
+    <string name="delete_dialog_msg">Delete this product?</string>
+
+    <!-- Dialog button text for the option to confirm deleting the current product [CHAR LIMIT=20] -->
+    <string name="delete">Delete</string>
+
+    <!-- Dialog button text for the option to cancel deletion of the current product [CHAR LIMIT=20] -->
+    <string name="cancel">Cancel</string>
+
     <string name="hint_product_name">Name</string>
     <string name="hint_product_price">Price</string>
     <string name="hint_product_quantity">Quantity</string>
     <string name="hint_product_supplier">Supplier</string>
     <string name="hint_product_phone">Phone</string>
     <string name="editor_new_product">Add product</string>
+    <string name="editor_edit_product">Edit product</string>
+    <string name="product_price">Product price:\u0020</string>
+    <string name="product_quantity">Product quantity:\u0020</string>
+    <string name="sell">Sell</string>
+    <string name="quantity_below_zero">Quantity can\'t be less than zero</string>
+    <string name="default_quantity">0</string>
+    <string name="decrease">-</string>
+    <string name="increase">+</string>
+    <string name="edit_quantity">Edit quantity</string>
+    <string name="call">Call</string>
+    <string name="title_error">You must enter the title</string>
+    <string name="supplier_name_error">You must enter the supplier name</string>
 
 </resources>
