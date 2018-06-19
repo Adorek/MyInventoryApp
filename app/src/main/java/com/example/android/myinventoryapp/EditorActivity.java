@@ -116,7 +116,7 @@ public class EditorActivity extends AppCompatActivity implements
         mCallToSupplier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phone = mCallToSupplier.getText().toString().trim();
+                String phone = mSupplierEditText.getText().toString().trim();
                 Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:" + phone));
                 if (intent.resolveActivity(getPackageManager()) != null) {
@@ -279,12 +279,11 @@ public class EditorActivity extends AppCompatActivity implements
                 // Add product
                 saveProduct();
                 if (checkSum == 0) {
+                    // Exit activity
                     finish();
                 } else {
 
                 }
-                // Exit activity
-                finish();
                 return true;
             case R.id.action_delete:
                 // Pop up confirmation dialog for deletion
